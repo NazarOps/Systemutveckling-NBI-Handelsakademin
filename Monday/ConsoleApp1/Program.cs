@@ -1,10 +1,13 @@
-﻿namespace ConsoleApp1
+﻿using System;
+
+class Cat
 {
-    internal class Program
+    private string name = "Fluffy boi";
+    private string word = "Meooow!";
+
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        Cat myCat = new Cat();
+        Console.WriteLine(myCat.name + " says " + myCat.word);
     }
 }
