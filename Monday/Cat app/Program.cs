@@ -1,13 +1,21 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-class Cat
+public class Cat
 {
-    private string name = "Fluffy boi";
-    private string word = "Meooow!";
+    private string name;
+    private string color;
+    private string age;
 
-    static void Main(string[] args)
+    public Cat(string name, string color, string age)
     {
-        Cat myCat = new Cat();
-        Console.WriteLine(myCat.name + " says " + myCat.word);
+        Name = name;
+        Color = color;
+        Age = age;
     }
+
 }
+
+
+
+    
