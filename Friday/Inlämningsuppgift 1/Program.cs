@@ -13,6 +13,7 @@
 
             myAnimal.info();    
             
+            // Polymorphism
             Bat bat1 = new Bat();
             bat1.Fly();
 
