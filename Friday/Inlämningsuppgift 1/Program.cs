@@ -11,7 +11,18 @@
             myAnimal.Type = "Cat";
             myAnimal.Age = 11;
 
-            myAnimal.info();       
+            myAnimal.info();    
+            
+            Bat bat1 = new Bat();
+            bat1.Fly();
+
+            // Inkapsling hämtar namn data från strängen person 
+            Person personNazar = new Person("Nazar");
+
+            // Abstraktion
+            Orangutang orangutang = new Orangutang();
+            orangutang.jump();
+                    
 
         }
     }
