@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            // Här inne skapar vi ett objekt av klassen Animal
+            // Här inne skapar vi en instans av klassen Animal
             Animal myAnimal = new Animal();
             myAnimal.Size = "Big";
             myAnimal.Color = "Orange";
