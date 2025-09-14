@@ -14,6 +14,13 @@
         {
             Console.WriteLine($"This animal is a {Type}, it's {Size}, has a {Color} color and is {Age} years old");
         }
+
+        public void Jump()
+        {
+            Console.WriteLine("This animal can not jump");
+
+        }
+
         public virtual void Fly()
         {
             Console.WriteLine("This animal can not fly");

@@ -10,7 +10,7 @@
         // Nya metoder och gamla metoder från Animal
         public new void Jump()
         {
-            Console.WriteLine("This Animal can jump");
+            Console.WriteLine("This monkey can jump");
         }
     }
 }

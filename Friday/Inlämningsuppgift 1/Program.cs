@@ -23,6 +23,13 @@
             // Abstraktion
             Orangutang orangutang = new Orangutang();
             orangutang.jump();
+
+            // Arv
+            Animal animalOne = new Animal();
+            animalOne.Jump();
+
+            Monkey monkeyOne = new Monkey();
+            monkeyOne.Jump();
                     
 
         }
