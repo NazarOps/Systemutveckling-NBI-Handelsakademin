@@ -9,11 +9,7 @@
             
             customer.Experience();
 
-            Person person = new Person("John Doe");
-            person.Name = "John Doe";
-            person.Age = 25;
-            person.Gender = "Male";
-
+            Person person = new Person("John Doe", 25, "Male");
             person.InfoAboutPerson();
 
             Membership membership = new Membership("Active");
@@ -31,32 +27,32 @@
 
             employee.info();
 
-            Bench_press bench_Press = new Bench_press();
-            bench_Press.Brand = "Eleiko";
-            bench_Press.AmountofEquipment = 4;
-            bench_Press.Condition = "Brand new";
+            BenchPress benchPress = new BenchPress();
+            benchPress.Brand = "Eleiko";
+            benchPress.AmountOfEquipment = 4;
+            benchPress.Condition = "Brand new";
 
-            bench_Press.InUse();
+            benchPress.InUse();
 
-            Squat_racks squat_rack = new Squat_racks();
-            squat_rack.Brand = "Eleiko";
-            squat_rack.AmountofEquipment = 3;
-            squat_rack.Condition = "Worn out";
+            SquatRack squatRack = new SquatRack();
+            squatRack.Brand = "Eleiko";
+            squatRack.AmountOfEquipment = 3;
+            squatRack.Condition = "Worn out";
 
-            squat_rack.InUse();
+            squatRack.InUse();
 
             Machines machines = new Machines();
             machines.Brand = "Hammer Strength";
-            machines.AmountofEquipment = 10;
+            machines.AmountOfEquipment = 10;
             machines.Condition = "decent";
 
             machines.InUse();
 
             Equipment equipment = new Equipment();
             equipment.Brand = "Life Fitness";
-            equipment.Condition = "A bit worn out";
+            equipment.Condition = "a bit worn out";
             equipment.Type = "Chest Press";
-            equipment.AmountofEquipment = 10;
+            equipment.AmountOfEquipment = 10;
 
             equipment.info();
         }

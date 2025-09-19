@@ -8,7 +8,7 @@
         
         public void Experience()
         {
-            Console.WriteLine("This customer is a novice lifter \n");
+            Console.WriteLine("This customer is a novice lifter\n");
         }
 
     }

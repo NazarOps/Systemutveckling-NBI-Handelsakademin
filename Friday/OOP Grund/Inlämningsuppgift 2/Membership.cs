@@ -31,17 +31,17 @@
 
         public void ShowMembershipStatus()
         {
-            Console.WriteLine($"Your membership is currently {MembershipStatus}, it starts on {StartDate} and expires on {EndDate}. \n");
+            Console.WriteLine($"Your membership is currently {MembershipStatus}, it starts on {StartDate} and expires on {EndDate}.\n");
         }
 
         public void RenewMembership()
         {
-            Console.WriteLine("Do you wish to renew your membership? \n");
+            Console.WriteLine("Do you wish to renew your membership?\n");
         }
 
         public void CancelMembership()
         {
-            Console.WriteLine("Do you wish to cancel your membership? \n");
+            Console.WriteLine("Do you wish to cancel your membership?\n");
         }
     }
 }

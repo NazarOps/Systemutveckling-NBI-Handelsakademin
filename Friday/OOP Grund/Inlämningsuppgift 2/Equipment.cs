@@ -5,11 +5,11 @@
         public string Brand;
         public string Condition;
         public string Type;
-        public int AmountofEquipment;
+        public int AmountOfEquipment;
 
         public void info()
         {
-            Console.WriteLine($"This equipment is made by {Brand}, it's {Condition}, it's a {Type} and there are {AmountofEquipment} of them. \n");
+            Console.WriteLine($"This equipment is made by {Brand}, it's {Condition}, it's a {Type} and there are {AmountOfEquipment} of them.\n");
         }
     }
 }

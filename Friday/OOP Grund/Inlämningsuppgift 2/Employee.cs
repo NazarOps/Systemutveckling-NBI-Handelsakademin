@@ -8,7 +8,7 @@
 
         public void info()
         {
-            Console.WriteLine($"There are currently {NumberofStaff} staff members working at the gym. Most of them have {WorkExperience} years of work experience. \n");
+            Console.WriteLine($"There are currently {NumberofStaff} staff members working at the gym. Most of them have {WorkExperience} years of work experience.\n");
         }
     }
 }

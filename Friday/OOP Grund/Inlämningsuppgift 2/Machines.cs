@@ -4,7 +4,7 @@
     {
             public void InUse()
             {
-                Console.WriteLine($"This Machine is currently not in use. It's a {Brand} brand. It's in {Condition} condition and there are {AmountofEquipment} of them.");
+                Console.WriteLine($"This Machine is currently not in use. It's a {Brand} brand. It's in {Condition} condition and there are {AmountOfEquipment} of them.\n");
             }
     }
 }
