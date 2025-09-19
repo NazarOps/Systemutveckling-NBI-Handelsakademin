@@ -1,43 +1,29 @@
-﻿namespace Inlämningsuppgift_2
+﻿public class Person
 {
-    public class Person
+    // Properties instead of private fields
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Gender { get; set; }
+
+    // Default constructor
+    public Person() { }
+
+    // Constructor with parameters
+    public Person(string name, int age, string gender)
     {
-        private string Name;
-        private int Age;
-        private string Gender;
+        Name = name;
+        Age = age;
+        Gender = gender;
+    }
 
-        public Person(string namn) 
-        {
-            Name = namn;
-        }
-        public string Namn
-        {
-            get { return Name; }
-            set { Name = value; }
-        }
+    // Constructor with just name
+    public Person(string name)
+    {
+        Name = name;
+    }
 
-        public Person(int age)
-        {
-            Age = age;
-        }
-        public int Ålder
-        {
-            get { return Age; }
-            set { Age = value; }
-        }
-        public string Kön
-        {
-            get { return Gender; }
-            set { Gender = value; }
-        }
-
-        public void InfoAboutPerson()
-        {
-            Console.WriteLine($"This persons name is {Namn}, person is {Ålder} years old and persons gender is {Kön}");
-        }
-
-        public Person()
-        { 
-        }
+    public void InfoAboutPerson()
+    {
+        Console.WriteLine($"This person's name is {Name}, they are {Age} years old and their gender is {Gender}");
     }
 }

@@ -10,9 +10,9 @@
             customer.Experience();
 
             Person person = new Person("John Doe");
-            person.Namn = "John Doe";
-            person.Ålder = 25;
-            person.Kön = "Male";
+            person.Name = "John Doe";
+            person.Age = 25;
+            person.Gender = "Male";
 
             person.InfoAboutPerson();
 
