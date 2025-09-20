@@ -1,143 +1,45 @@
 # Inlämningsuppgift 2 – Fitnessklubbsystem
 
-Detta projekt är en inlämningsuppgift där jag utvecklar ett **Fitnessklubbsystem** i C#.
-Syftet är att öva på objektorienterad programmering (OOP) genom att använda **klasser, arv, inkapsling och metoder**.
+Detta projekt är en inlämningsuppgift där jag utvecklar ett Fitnessklubbsystem i C#.
+Syftet är att öva på objektorienterad programmering (OOP) genom att använda klasser, arv, inkapsling och metoder.
 
----
+Programmet innehåller 8 stycken klasser och alla har sina egna attributer och metoder. 
 
-## 📋 Beskrivning
+I program.cs så finns det alla objekt och metoder som anropas. 
 
-Systemet innehåller **8 klasser** och motsvarande objekt.
-Varje klass har egna attribut och metoder, och flera klasser ärver från varandra för att visa på användning av arv i OOP.
+- Customer.cs
+En klass för kunden. Klassen innehåller en 
+inkapsling princip som är privat och vi anropar den med hjälp av public metoder.
 
----
+- BenchPress.cs
+En klass för bänkpress, klassen ärver all information från Equipment.cs och har sin egen
+metod som är InUse().
 
-## 🧩 Klasser och objekt
+- Equipment.cs 
+En huvudklass för all träningsutrustning som exempelvis BenchPress.cs ärver från. Klassen innehåller
+information om vad det är för typ av märke, vilken skick utrustningen är i och om den 
+används eller inte.
 
-### `Equipment.cs`
-- **Beskrivning:** Grundklass för träningsutrustning.
-- **Attribut:**
-  - `Brand` (märke)
-  - `Condition` (skick)
-  - `Type` (typ av equipment)
-  - `Quantity` (antal som finns i gymmet)
-- **Metoder:**
-  - `Info()` – skriver ut information om utrustningen.
+- Machines.cs
+En klass för träningsmaskiner. Samma sak gäller här som i BenchPress.cs klassen. Machines.cs ärver
+allt från Equipment.cs och den har sin egen metod som säger om träningsmaskinen används eller inte.
 
----
+- Employee.cs
+En klass för alla som jobbar på gymmet. Den ärver information från klassen Person.cs men den har också
+sina egna attributer så som arbetslivserfarenhet och antalet människor som jobbar på gymmet och den har
+sin egen metod info() som skriver ut information hur många personer det är som jobbar på gymmet och
+deras arbetslivserfarenhet.
 
-### `BenchPress.cs`
-- Ärver från `Equipment`.
-- Har en egen metod `InUse()` som kan anropas för att simulera användning.
+- Membership.cs
+En huvudklass för medlemskapet. Man kan säga att denna klass är ett gymkort som har inkapslad information.
+Klassen innehåller information om startdatum, slutdatum och nuvarande status för medlemskapet.
 
----
+- Person.cs
+En huvudklass för en person som innehåller inkapslad information om Namn, Ålder och Kön. Klassen använder get; set;
+metoderna för att hämta information
 
-### `SquatRacks.cs`
-- Ärver från `Equipment`.
-- Har en egen metod `InUse()` som kan anropas för att simulera användning.
+- SquatRack.cs
+En klass för squatracken. Klassen ärver allt från Equipment.cs och den har sin egen metod InUse() som talar om
+racken är uppdaten eller inte.
 
----
 
-### `Machines.cs`
-- Ärver från `Equipment`.
-- Har en egen metod `InUse()` som kan anropas för att simulera användning.
-
----
-
-### `Person.cs`
-- Klass för en "Gymgoer".
-- **Inkapsling:** innehåller privata attribut som bara kan nås via **public metoder**.
-
----
-
-### `Customer.cs`
-- Ärver från `Person`.
-- Extra attribut:
-  - Antal år kunden har tränat.
-  - Om kunden är **nybörjare** eller **erfaren**.
-
----
-
-### `Membership.cs`
-- Klass för gymmedlemskap ("gymkort").
-- Innehåller **startdatum** och **slutdatum**.
-- Är inkapslad, så man måste anropa attribut via **public metoder**.
-
----
-
-### `Employee.cs`
-- Ärver från `Person`.
-- Extra attribut:
-  - Antal anställda på gymmet.
-  - Om de är erfarna eller oerfarna.
-- **Metod:**
-  - `Info()` – skriver ut antalet anställda och deras erfarenhet.
-
----
-
-## 🛠️ Teknisk information
-
-- **Språk:** C#
-- **Paradigm:** Objektorienterad programmering (OOP)
-- **OOP-principer:** Arv, inkapsling, polymorfism
-
----
-
-## 🚀 Installation och körning
-
-1. Klona projektet:
-   ```bash
-   git clone https://github.com/DITT-ANVÄNDARNAMN/inlamningsuppgift2-fitnessklubb.git
-   ```
-2. Öppna projektet i **Visual Studio** eller **Visual Studio Code** med .NET SDK installerat.
-3. Kör programmet via `Program.cs`.
-
----
-
-## 📖 Exempel på användning
-
-```csharp
-// Skapa en ny bänkpress
-BenchPress bench = new BenchPress("Eleiko", "Bench Press", "Nytt", 2);
-
-// Anropa metod för att använda bänkpressen
-bench.InUse();
-
-// Skapa en kund
-Customer kund = new Customer("Anna", "Eriksson", 25, "Kvinna", "3 år", false);
-
-// Skapa ett medlemskap
-Membership medlemskap = new Membership(DateTime.Now, DateTime.Now.AddYears(1));
-```
-
----
-
-## 📂 Projektstruktur
-
-```
-inlamningsuppgift2/
-│── Equipment.cs
-│── BenchPress.cs
-│── SquatRacks.cs
-│── Machines.cs
-│── Person.cs
-│── Customer.cs
-│── Membership.cs
-│── Employee.cs
-│── Program.cs
-└── README.md
-```
-
----
-
-## ✨ Lärdomar
-
-- Arv och inkapsling i C#
-- Strukturering av objektorienterad kod
-- Modellering av verkliga system med hjälp av klasser och objekt
-
----
-
-## 📜 Licens
-
-Detta projekt är en skoluppgift och är inte avsett för kommersiellt bruk.
