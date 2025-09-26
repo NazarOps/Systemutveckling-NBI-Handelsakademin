@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            BankAccount account = new BankAccount();
+
+            account.Deposit();
+            account.ShowBalance();
         }
     }
 }
