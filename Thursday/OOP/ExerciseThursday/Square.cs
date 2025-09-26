@@ -2,15 +2,17 @@
 {
     public class Square : Shape
     {
+        public string side;
+        public int area;
+
         public override void CalculateArea()
         {
             Console.WriteLine("Please input the dimensions of square");
-            string side = Console.ReadLine();
+            side = Console.ReadLine();
 
-            int sum = Convert.ToInt32(side) * Convert.ToInt32(side);
+            area = Convert.ToInt32(side) * Convert.ToInt32(side);
             Console.WriteLine($"{side} * {side}");
-            Console.WriteLine($"The area of a square is: {sum}cm");
-            
+            Console.WriteLine($"The area of a square is: {area}cm");
             
         }
     }

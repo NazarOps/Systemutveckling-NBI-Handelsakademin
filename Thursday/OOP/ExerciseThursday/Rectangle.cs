@@ -2,17 +2,21 @@
 {
     public class Rectangle : Shape
     {
+        public string Length;
+        public string Height;
+        public int Area;
+
         public override void CalculateArea()
         {
             Console.WriteLine("\nPlease input the dimensions for the length of a rectangle");
-            string bas = Console.ReadLine();
+            Length = Console.ReadLine();
 
             Console.WriteLine("Now input the dimensions for the height of the rectangle");
-            string höjd = Console.ReadLine();
+            Height = Console.ReadLine();
 
-            int area = Convert.ToInt32(bas) * Convert.ToInt32(höjd);
-            Console.WriteLine($"{bas} * {höjd}");
-            Console.WriteLine($"Area of rectangle is: {area}");
+            Area = Convert.ToInt32(Length) * Convert.ToInt32(Height);
+            Console.WriteLine($"{Length} * {Height}");
+            Console.WriteLine($"Area of rectangle is: {Area}");
         }
     }
 }
