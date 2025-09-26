@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace ExerciseThursday
+﻿namespace ExerciseThursday
 {
     public class Circle : Shape 
     {
