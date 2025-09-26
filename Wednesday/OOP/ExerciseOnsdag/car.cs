@@ -11,7 +11,7 @@
         public void collectInfo()
         {
             // Clean Code
-            // Här behöver vi inte skriva Car.brand osv för att vi har redan deklarerat
+            // Här behöver vi inte skriva Car.Brand osv för att vi har redan deklarerat
             // Vi tar in användarinput som information för brand, model och modelnumber
 
             Console.WriteLine("\nPlease provide a car brand");
