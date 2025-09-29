@@ -2,6 +2,7 @@
 {
     internal class Quiz
     {
+        public string choice;
         
         public void Start()
         {
@@ -16,7 +17,7 @@
 
         public void Answer()
         {
-            string choice = Console.ReadLine();
+            choice = Console.ReadLine();
 
             switch (choice) 
             {
