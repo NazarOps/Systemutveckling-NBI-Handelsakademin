@@ -13,6 +13,7 @@ namespace BankAccountSimulation
         // calls the method UserInteraction
         public static void UserInteraction()
         {
+
             bool isRunning = true;  // here i made so that the menu loops with a bool statement, while the statement is true
             while (isRunning)       // the menu will keep running
             {
