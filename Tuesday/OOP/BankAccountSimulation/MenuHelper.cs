@@ -23,76 +23,95 @@ namespace BankAccountSimulation
                 Console.WriteLine("3) Show Balance");
                 Console.WriteLine("4) Log Out");
 
-                Console.Write("\nUser: ");
-                UserInput = Convert.ToInt32(Console.ReadLine()); // takes in user input and converts it to integer
-
-                // below here are the 4 alternatives the user can choose from, if user pressed 1, it will display deposit, if 2 then withdraw etc
-                // if user inputs a number that's not from 1-4 then the application will close
-
-                if (UserInput == 1)
+                try 
+                // try function will enclose the code within curly brackets and catch any inputs that are not integers
                 {
-                    Console.Write("How much would you like to deposit?: ");
-                    DepositMoney = Convert.ToInt32(Console.ReadLine());
-                    //Console.Clear(); // added console.clear to keep the console clean and not confuse the user with old inputs
+                    Console.Write("\nUser: ");
+                    UserInput = Convert.ToInt32(Console.ReadLine()); // takes in user input and converts it to integer
 
-                    if (DepositMoney <= 0)
+                    // below here are the 4 alternatives the user can choose from, if user pressed 1, it will display deposit, if 2 then withdraw etc
+                    // if user inputs a number that's not from 1-4 then the application will close
+
+
+
+                    if (UserInput == 1)
                     {
-                        Console.WriteLine("Balance can't be negative!");
-                        Console.WriteLine("No money has been deposited\n");
+                        Console.Write("How much would you like to deposit?: ");
+                        DepositMoney = Convert.ToInt32(Console.ReadLine());
+                        //Console.Clear(); // added console.clear to keep the console clean and not confuse the user with old inputs
 
-                        Thread.Sleep(900);
-                        Console.Clear();
+                        if (DepositMoney <= 0)
+                        {
+                            Console.WriteLine("Balance can't be negative!");
+                            Console.WriteLine("No money has been deposited\n");
+
+                            Thread.Sleep(900);
+                            Console.Clear();
+                        }
+
+                        else if (DepositMoney > 0)
+                        {
+                            Balance += DepositMoney; // the amount that user inputs will be added, if it was minus instead then it would be withdrawing
+                            Console.WriteLine($"Deposit successful, new balance: {Balance}\n");
+
+                            Thread.Sleep(900); // added thread.sleep for a timeout effect
+                            Console.Clear();
+                        }
+
                     }
 
-                    else if (DepositMoney > 0)
+                    if (UserInput == 2)
                     {
-                        Balance += DepositMoney; // the amount that user inputs will be added, if it was minus instead then it would be withdrawing
-                        Console.WriteLine($"Deposit successful, new balance: {Balance}\n");
+                        Console.Write("How much would you like to withdraw: ");
+                        Withdraw = Convert.ToInt32(Console.ReadLine());
 
-                        Thread.Sleep(900); // added thread.sleep for a timeout effect
-                        Console.Clear();
+                        if (Withdraw == Balance)
+                        {
+                            Balance -= Withdraw;
+                            Console.WriteLine($"Successfully withdrawn: {Withdraw}");
+                            Console.WriteLine($"New balance: {Balance}\n");
+                            Thread.Sleep(1200);
+                            Console.Clear();
+                        }
+
+                        else if (Withdraw <= 0)
+                        {
+                            Console.WriteLine("Withdraw must be greater than zero!");
+                            Thread.Sleep(1200);
+                            Console.Clear();
+                        }
+
+                        else if (Withdraw > Balance)
+                        {
+                            Console.WriteLine("You can't withdraw more than you have!");
+                            Console.WriteLine($"Your balance: {Balance}");
+                            Thread.Sleep(1200);
+                            Console.Clear();
+                        }
                     }
-                    
-                    
-                }
 
-                if (UserInput == 2)
-                {
-                    Console.Write("How much would you like to withdraw: ");
-                    Withdraw = Convert.ToInt32(Console.ReadLine());
-
-                    if (Withdraw <= Balance)
+                    if (UserInput == 3)
                     {
-                        Balance -= Withdraw;
-                        Console.WriteLine($"Successfully withdrawn: {Withdraw}");
-                        Console.WriteLine($"New balance: {Balance}\n");
+                        Console.WriteLine($"Your balance is {Balance}\n");
                         Thread.Sleep(1200);
                         Console.Clear();
                     }
 
-                    else if (Withdraw > Balance)
+                    if (UserInput == 4)
                     {
-                        Console.WriteLine("You can't withdraw more than you have!");
-                        Console.WriteLine($"Your balance: {Balance}");
+                        Console.WriteLine("Goodbye, have a nice day!");
                         Thread.Sleep(1200);
-                        Console.Clear();
+                        break;
                     }
                 }
 
-                if (UserInput == 3)
+                catch (FormatException e)
                 {
-                    Console.WriteLine($"Your balance is {Balance}\n");
+                    Console.WriteLine("\nEnter ONLY Numbers!");
                     Thread.Sleep(1200);
                     Console.Clear();
                 }
-
-                if (UserInput == 4)
-                {
-                    Console.WriteLine("Goodbye, have a nice day!");
-                    Thread.Sleep(1200);
-                    break;
-                }
-            }
+            }   
         }
     }
 }
