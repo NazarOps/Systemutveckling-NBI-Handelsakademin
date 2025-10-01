@@ -4,11 +4,9 @@
     {
         static void Main(string[] args)
         {
-
-
             MenuHelper.ShowMenu();
-            MenuHelper.deposit();
-            MenuHelper.Withdraw();
+            MenuHelper.UserInteraction();
+            
         }
     }
 }
