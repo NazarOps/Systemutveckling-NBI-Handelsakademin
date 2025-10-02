@@ -47,32 +47,34 @@
                 isValid = true;
             }
 
-            if (password.Any(char.IsDigit)) // Any checks if a string contains a number or letter
+            if (!password.Any(char.IsDigit)) // Any checks if a string contains a number or letter
             {
                 Console.WriteLine("your password must contain at least a number");
                 isValid = false;
             }
 
-            if (password.Any(char.IsSymbol))
+            if (!password.Any(char.IsSymbol))
             {
                 Console.WriteLine("your password must contain at least one symbol");
                 isValid = false;
 
             }
 
-            if (password.Any(char.IsUpper))
+            if (!password.Any(char.IsUpper))
             {
                 Console.WriteLine("your password must contain at least one capital letter");
                 isValid = false;
 
             }
+
+            if (password.Length >= 6 && password.Any(char.IsDigit) && password.Any(ch => !char.IsLetterOrDigit(ch)) && password.Any(char.IsSymbol));
+            {
+                Console.WriteLine("Register successful!");
+                isValid = true;
+            }
         }
 
-         /* if(password.Length >= 6 && password.Any(char.IsDigit) && password.Any(ch => !char.IsLetterOrDigit(ch)));
-            {
-                isValid = false;
-                Console.WriteLine("Register successful!");
-            } */
+            
 
 }
 }
