@@ -7,6 +7,7 @@
             Account account = new Account();
             account.Register();
             account.CheckPsswdStrngth();
+            account.Login();
         }
     }
 }
