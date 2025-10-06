@@ -19,14 +19,17 @@
                 if (User < Target)
                 {
                     Console.WriteLine("Too low, try again!");
+                    User = Convert.ToInt32(Console.ReadLine());
                 }
                 else if (User > Target)
                 {
                     Console.WriteLine("Too high, try again!");
+                    User = Convert.ToInt32(Console.ReadLine());
                 }
-                else (User = Target);
+                else if (User == Target)
                 {
                     Console.WriteLine("Congratulations, you guessed right!");
+                    User = Convert.ToInt32(Console.ReadLine());
                 }
             } 
         }
