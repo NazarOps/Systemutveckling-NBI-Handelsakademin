@@ -26,18 +26,18 @@ namespace UserGradeCollection
                 Console.WriteLine("\nType Exit to quit program");
 
                 Console.Write("\nUser: ");
-                string UserInput = Console.ReadLine();
+                string UserInput = Console.ReadLine(); // Ask for user's choice
 
-                if (UserInput == "a")
+                if (UserInput == "a") // If user chooses a then add a new student by calling method
                 {
                     Add();
                 }
 
-                if (UserInput == "b")
+                if (UserInput == "b") // If user chooses b then update an existing student's grade
                 {
                     UpdateGrade();
                 }
-                if (UserInput == "Exit")
+                if (UserInput == "Exit") // If user types in "Exit" then the application will end
                 {
                     break;
                 }
