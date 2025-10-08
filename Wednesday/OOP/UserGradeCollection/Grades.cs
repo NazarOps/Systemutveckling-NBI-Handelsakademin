@@ -8,10 +8,12 @@ namespace UserGradeCollection
     {
         public string name;
         public int grade;
+        public int total;
 
-        Dictionary<string, int> Students = new Dictionary<string, int>();
+        
+        Dictionary<string, int> Students = new Dictionary<string, int>(); // create a dictionary before intializing it for student grades
 
-        bool isRunning = true;
+        bool isRunning = true; // wrap the menu in a while loop
 
         public void Menu()
         {
@@ -30,13 +32,26 @@ namespace UserGradeCollection
 
                 if (UserInput == "a") // If user chooses a then add a new student by calling method
                 {
-                    Add();
+                    AddStudent();
                 }
 
                 if (UserInput == "b") // If user chooses b then update an existing student's grade
                 {
                     UpdateGrade();
                 }
+
+                if (UserInput == "c") 
+                {
+                    ShowStudents();
+                }
+
+                if (UserInput == "d")
+                {
+                    Console.WriteLine("Calculating...");
+                    Thread.Sleep(1000);
+                    CalculateAverageGrade();
+                }
+                
                 if (UserInput == "Exit") // If user types in "Exit" then the application will end
                 {
                     break;
@@ -44,7 +59,7 @@ namespace UserGradeCollection
             }
         }
 
-        public void Add()
+        public void AddStudent()
         {
           
                 Console.Write("What's the student's name?: ");
@@ -65,7 +80,7 @@ namespace UserGradeCollection
 
                 if(UserInput == "y")
                 {
-                    Add();
+                    AddStudent();
                 }
 
                 if(UserInput == "n")
@@ -75,7 +90,6 @@ namespace UserGradeCollection
                 }
             
         }
-
         public void UpdateGrade()
         {
             Console.WriteLine("Which student's grade do you want to update?");
@@ -85,12 +99,56 @@ namespace UserGradeCollection
             {
                 Console.WriteLine($"{UserInput} is in the list");
                 Console.WriteLine($"What grade would you like to change {UserInput}'s to?: ");
+                grade = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Grade has been successfully changed");
+                Thread.Sleep(500);
+                Console.Clear();
             }
 
             else
             {
-                Console.WriteLine($"{UserInput} is not on the list");
+                Console.WriteLine($"{UserInput} is not on the list \n");
+                Thread.Sleep(500);
+                Console.Clear();
             }
+        }
+
+        public void ShowStudents()
+        {
+            Console.WriteLine("List of students and their grades:\n");
+
+            foreach (KeyValuePair<string, int> student in Students)
+            {
+                Console.WriteLine($"Name: {student.Key}, Grade: {student.Value}");
+                
+            }
+
+            Thread.Sleep(500);
+            Console.Clear();
+        }
+
+        public void CalculateAverageGrade()
+        {
+            if (Students.Count == 0)
+            {
+                Console.WriteLine("No students have been added yet.\n");
+                Thread.Sleep(500);
+                Console.Clear();
+                return;
+            }
+
+            total = 0;
+
+            foreach (int grade in Students.Values)
+            {
+                total += grade;
+            }
+
+            double average = (double)total / Students.Count;
+
+            Console.WriteLine($"\nThe average grade is {average:F2}\n");
+            Thread.Sleep(1000);
+            Console.Clear();
         }
     }
 }
