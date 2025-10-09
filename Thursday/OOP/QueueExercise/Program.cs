@@ -10,11 +10,12 @@ namespace QueueExercise
             Queue queue = new Queue();
             queue.Run();
             queue.UserChoice();
+            queue.Start();
+            queue.Enqueue();
+            
 
             // create a queue
-            Queue<string> customerQueue = new Queue<string>();
-
-            customerQueue.Enqueue("1");
+            
         }
     }
 }
