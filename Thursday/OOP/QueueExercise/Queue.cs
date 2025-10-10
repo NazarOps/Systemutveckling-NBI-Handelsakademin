@@ -10,11 +10,10 @@ namespace QueueExercise
     {
         public string UserInput;
 
-        bool isRunning = false; // create a loop for later
+        bool isRunning = true; // create a loop for later
         
         // create a queue
         Queue<string> customerQueue = new Queue<string>();
-
 
         public void Run()
         {
@@ -24,25 +23,77 @@ namespace QueueExercise
             Console.WriteLine("2.) Show next information");
             Console.WriteLine("3.) Finish a task");
             Console.WriteLine("4.) Show remaining");
+            Console.WriteLine("5.) Quit program");
         }
 
-    public void UserChoice()
+        public void UserChoice()
         {
             Console.Write("\nUser: ");
             UserInput = Console.ReadLine();
 
-            if (UserInput == "1")
-            {
-                Enqueue();
+                while (isRunning)
+                {
+                    if (UserInput == "1")
+                    {
+                        // Add information(to the end of queue)
+                        Console.WriteLine("\nAdd information to the queue");
+                        Console.Write("User: ");
+                        UserInput = Console.ReadLine();
+
+                        if (!string.IsNullOrEmpty(UserInput)) // check that input is NOT empty
+                        {
+                            customerQueue.Enqueue(UserInput);
+                            Console.WriteLine($"Added '{UserInput}' to the queue.");
+                            Thread.Sleep(600);
+                        
+                        }
+
+                        Console.WriteLine("Would you like to add something else?");
+                        UserInput = Console.ReadLine();
+
+                        if (UserInput == "yes")
+                        {
+                            UserChoice();
+                        }
+                        
+                        if (UserInput == "no")
+                        { 
+                            Thread.Sleep(1000);
+                            Console.Clear();
+                            Run();
+                            UserChoice();
+                        }
+                }
+
+                    if (UserInput == "2")
+                    {
+                        Console.WriteLine(customerQueue.Peek());
+                    }
+
+                    if (UserInput == "3")
+                    {
+                        customerQueue.Dequeue();
+                    }
+
+                    if (UserInput == "4")
+                    {
+
+                    }
+
+                    if (UserInput == "5")
+                    {
+                        Console.WriteLine("We hope to see you again!");
+                        Thread.Sleep(1000);
+                        break;
+                    }
             }
         }
+            
 
         public void Start()
         {
             while (isRunning)
             {
-                Enqueue(); // You can call the method inside the loop, but not define it here
-
                 if (UserInput == "no")
                 {
                     break;
@@ -50,39 +101,38 @@ namespace QueueExercise
                     Console.Clear();
                     Run();
                 }
-
             }   
         }
 
-        public void Enqueue()
-        {
-            // Add information (to the end of queue)
-            Console.WriteLine("\nAdd information to the queue");
-            Console.Write("User: ");
-            UserInput = Console.ReadLine();
+        //public void Enqueue()
+        //{
+        //    // Add information (to the end of queue)
+        //    Console.WriteLine("\nAdd information to the queue");
+        //    Console.Write("User: ");
+        //    UserInput = Console.ReadLine();
 
-            if (!string.IsNullOrEmpty(UserInput)) // check that input is NOT empty
-            {
-                customerQueue.Enqueue(UserInput);
-                Console.WriteLine($"Added '{UserInput}' to the queue.");
-                Thread.Sleep(600);
-                Console.WriteLine("Would you like to add something else?");
-            }
-            else
-            {
-                Console.WriteLine("Input cannot be empty. Please try again.");
-            }
-        }
+        //    if (!string.IsNullOrEmpty(UserInput)) // check that input is NOT empty
+        //    {
+        //        customerQueue.Enqueue(UserInput);
+        //        Console.WriteLine($"Added '{UserInput}' to the queue.");
+        //        Thread.Sleep(600);
+        //        Console.WriteLine("Would you like to add something else?");
+        //    }
+        //    else
+        //    {
+        //    //    Console.WriteLine("Input cannot be empty. Please try again.");
+        //    //}
+        //}
 
-        public void QueueInformation()
-        {
+        //public void QueueInformation()
+        //{
        
-        }
+        //}
 
-    public void Dequeue()
-        {
+        //public void Dequeue()
+        //{
             
-        }
+        //}
 
     }
 }
