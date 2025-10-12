@@ -6,10 +6,10 @@ namespace QueueExercise
     {
         static void Main(string[] args)
         {
-            Queue<string> customerQueue = new Queue<string>();
+            
 
             // create object
-            Queue queue = new Queue();
+            QueueProgram queue = new QueueProgram();
             queue.Run();
             queue.UserChoice();
             queue.Start();

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace QueueExercise
 {
-    public class Queue
+    public class QueueProgram
     {
         public string UserInput;
 
         bool isRunning = true; // create a loop for later
-        
+
         // create a queue
         Queue<string> customerQueue = new Queue<string>();
 
@@ -31,77 +31,66 @@ namespace QueueExercise
             Console.Write("\nUser: ");
             UserInput = Console.ReadLine();
 
-                while (isRunning)
+            
+                if (UserInput == "1")
                 {
-                    if (UserInput == "1")
-                    {
-                        // Add information(to the end of queue)
+                        // Add information (to the end of queue)
                         Console.WriteLine("\nAdd information to the queue");
                         Console.Write("User: ");
-                        UserInput = Console.ReadLine();
+                        string UserInputTwo = Console.ReadLine();
 
-                        if (!string.IsNullOrEmpty(UserInput)) // check that input is NOT empty
+                        if (!string.IsNullOrEmpty(UserInputTwo)) // check that input is NOT empty
                         {
-                            customerQueue.Enqueue(UserInput);
-                            Console.WriteLine($"Added '{UserInput}' to the queue.");
+                            customerQueue.Enqueue(UserInputTwo);
+                            Console.WriteLine($"Added '{UserInputTwo}' to the queue.");
                             Thread.Sleep(600);
-                        
-                        }
-
-                        Console.WriteLine("Would you like to add something else?");
-                        UserInput = Console.ReadLine();
-
-                        if (UserInput == "yes")
-                        {
-                            UserChoice();
-                        }
-                        
-                        if (UserInput == "no")
-                        { 
-                            Thread.Sleep(1000);
                             Console.Clear();
-                            Run();
-                            UserChoice();
+                            
                         }
+                        
+                }
+            
+                if (UserInput == "2")
+                {
+                    Console.WriteLine($"Next in queue {customerQueue.Peek()}");
+                    Thread.Sleep(600);
+                    Console.Clear();
+                   
                 }
 
-                    if (UserInput == "2")
+                if (UserInput == "3")
+                {
+                    Console.WriteLine($"{customerQueue.Dequeue()} has been dequeued.");
+                    Thread.Sleep(600);
+                    Console.Clear();
+                }
+                    
+                if (UserInput == "4")
+                {
+                    foreach (string i in customerQueue)
                     {
-                        Console.WriteLine(customerQueue.Peek());
+                        Console.WriteLine($"\nQueue left: {i}");
+                        
                     }
-
-                    if (UserInput == "3")
-                    {
-                        customerQueue.Dequeue();
-                    }
-
-                    if (UserInput == "4")
-                    {
-
-                    }
-
-                    if (UserInput == "5")
-                    {
-                        Console.WriteLine("We hope to see you again!");
-                        Thread.Sleep(1000);
-                        break;
-                    }
-            }
+                    Thread.Sleep(600);
+                    Console.Clear();
+                }
         }
+        
             
-
         public void Start()
-        {
+        {   
             while (isRunning)
             {
-                if (UserInput == "no")
+                Run();
+                UserChoice();
+
+                if (UserInput == "5")
                 {
                     break;
-                    Thread.Sleep(1000);
-                    Console.Clear();
-                    Run();
                 }
-            }   
+            }
+            
         }
 
         //public void Enqueue()
