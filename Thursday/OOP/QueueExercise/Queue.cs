@@ -69,7 +69,7 @@ namespace QueueExercise
                 {
                     foreach (string i in customerQueue)
                     {
-                        Console.WriteLine($"\nQueue left: {i}");
+                        Console.WriteLine($"\nQueue left: {i}   ");
                         
                     }
                     Thread.Sleep(600);
