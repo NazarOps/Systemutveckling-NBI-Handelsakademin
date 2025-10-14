@@ -15,7 +15,7 @@ namespace Assignment_1___Job_Aplication_Tracker__Linq__OOP__Github_
         public DateTime ApplicationDate;
         public DateTime? ResponseDate;
         public int SalaryExpectation;
-
+        
         public void GetDaysSinceApplied()
         {
 
