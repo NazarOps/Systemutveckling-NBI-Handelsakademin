@@ -29,7 +29,7 @@ namespace JSON_exercise
             //foreach (var item in sortbydescending) {
             //    Console.WriteLine($"{item.Name} - {item.Price}");
             //}
-            
+
 
             //List<(string Name, int Grade)> StudentGrades = new List<(string Name, int Grade)>
             //{
@@ -51,7 +51,7 @@ namespace JSON_exercise
             //{
             //    Console.WriteLine($"Students with {student}");
             //}    
-                
+
             //List<(string Name, int Salary)> Employees = new List<(string Name, int Salary)>
             //{
             //    ("Bob", 5300),
@@ -62,35 +62,55 @@ namespace JSON_exercise
 
             //var projection = Employees
             //    .Select(x => (x.Name, NewSalary: x.Salary * 1.1));
-                
+
 
             //foreach (var employee in projection)
             //{
             //    Console.WriteLine($"{employee.Name}  New Salary: {employee.NewSalary:F2}");
             //}
 
-            List<int> ListOfNumbers = new List<int>();
-            ListOfNumbers.Add(50);
-            ListOfNumbers.Add(100);
-            ListOfNumbers.Add(500);
-            ListOfNumbers.Add(1000);
-            ListOfNumbers.Add(300);
+            //List<int> ListOfNumbers = new List<int>();
+            //ListOfNumbers.Add(50);
+            //ListOfNumbers.Add(100);
+            //ListOfNumbers.Add(500);
+            //ListOfNumbers.Add(1000);
+            //ListOfNumbers.Add(300);
 
-            var sum = ListOfNumbers.Sum();
-            var average = ListOfNumbers.Average();
-            var lowest = ListOfNumbers.Min();
-            var highest = ListOfNumbers.Max();
+            //var sum = ListOfNumbers.Sum();
+            //var average = ListOfNumbers.Average();
+            //var lowest = ListOfNumbers.Min();
+            //var highest = ListOfNumbers.Max();
 
             //Console.WriteLine($"Sum: {sum}");
             //Console.WriteLine($"Average: {average}");
             //Console.WriteLine($"Lowest: {lowest}");
             //Console.WriteLine($"Highest: {highest}");
 
-            string json = JsonSerializer.Serialize(sum);    
-            Console.WriteLine(json);
+            user User = new user();
 
-            File.WriteAllText("sum", json);
-            Console.WriteLine("File saved to JSON");
+            //Console.WriteLine("Please write your name and age");
+            //Console.Write("Name: ");
+
+            //User.Name = Console.ReadLine();
+
+            //Console.Write("\nNow write your age: ");
+
+            //User.Age = Convert.ToInt32(Console.ReadLine());
+
+            //string json = JsonSerializer.Serialize(User, new JsonSerializerOptions { WriteIndented = true });
+
+            //File.WriteAllText("user.json", json); // File.WriteAllText ("FILENAME.JSON, json serializer after")
+
+            //Console.WriteLine("Name and age saved to JSON");
+
+            string file = "user.json";
+            string readjson = File.ReadAllText(file);
+            
+            user userDeserialize = JsonSerializer.Deserialize<user>(readjson)!;
+
+            Console.WriteLine($"Name: {userDeserialize.Name}");
+            Console.WriteLine($"Age: {userDeserialize.Age}");
+
             
             
 
