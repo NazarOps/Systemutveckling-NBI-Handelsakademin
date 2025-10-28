@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            GenericList<string> GenericListWithStrings = new GenericList<string>();
-            GenericList<int> GenericListWithInts = new GenericList<int>();
+            GenericList<string> GenericListWithStrings = new GenericList<string>(); //create a list with strings from the generic list
+            GenericList<int> GenericListWithInts = new GenericList<int>(); // create a list with ints from the generic list
 
             GenericListWithStrings.Add("ThingOne");
             GenericListWithStrings.Add("ThingTwo");
