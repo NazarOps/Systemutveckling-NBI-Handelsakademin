@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            GenericList<string> GenericListWithStrings = new GenericList<string>(); //create a list with strings from the generic list
+            GenericList<string> GenericListWithStrings = new GenericList<string>(); //create a list with strings from the generic list replace Things with chosen datatype
             GenericList<int> GenericListWithInts = new GenericList<int>(); // create a list with ints from the generic list
 
             GenericListWithStrings.Add("ThingOne");

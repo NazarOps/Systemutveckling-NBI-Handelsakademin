@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace GenericClass
 {
-    public class GenericList<T> // create a generic class called genericlist
+    public class GenericList<Things> // create a generic class called genericlist
     {
-        public List<T> items = new List<T>(); // create a generic list that can store any data types
+        public List<Things> items = new List<Things>(); // create a generic list that can store any data types <T> can be anything, for example <Things>
             
 
-        public void Add(T item)             // methods
+        public void Add(Things item)             // methods
         {
             items.Add(item);
         }
 
-        public void Remove(T item)
+        public void Remove(Things item)
         {
             items.Remove(item);
         }
 
-        public T Get(int index)
+        public Things Get(int index)
         {
             return items[index];
 

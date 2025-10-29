@@ -4,7 +4,7 @@ using Spectre.Console;
 
 namespace test_menu
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -16,14 +16,18 @@ namespace test_menu
                 "Exit"
             };
 
-           
+            Console.SetWindowSize(100, 40);
+
+            //Console.SetBufferSize(40, 40);
+
+            Console.SetCursorPosition(10, 10);
 
             int selectedIndex = 0;
             bool isRunning = true;
 
             while (isRunning)
             {
-                Console.WriteLine("   _____ _   _____    __ __ ______   _________    __  _________\r\n  / ___// | / /   |  / //_// ____/  / ____/   |  /  |/  / ____/\r\n  \\__ \\/  |/ / /| | / ,<  / __/    / / __/ /| | / /|_/ / __/   \r\n ___/ / /|  / ___ |/ /| |/ /___   / /_/ / ___ |/ /  / / /___   \r\n/____/_/ |_/_/  |_/_/ |_/_____/   \\____/_/  |_/_/  /_/_____/   \r\n                                                               ");
+                Console.WriteLine("Menu");
                 // Draw menu
                 for (int i = 0; i < choices.Count; i++)
                 {
