@@ -9,16 +9,15 @@ namespace GenericBoxExercise
 {
     public class GenericBox<T>
     {
-
-
+        public T innehåll;
         public void SetValue(T value)
         {
-
+            innehåll = value;
         }
 
-        public void GetValue()
+        public T GetValue()
         {
-            return ;
+            return innehåll;
         }
     }
 }

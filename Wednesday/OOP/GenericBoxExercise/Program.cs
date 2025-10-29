@@ -1,9 +1,20 @@
-﻿namespace GenericBoxExercise
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace GenericBoxExercise
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+
+            //🧩 1.En enkel Generisk Box
+            //Skapa en generisk klass Box<T> som kan lagra ett värde av vilken typ som helst.
+            // ✅ Lägg till metoder:
+            //SetValue(T value)
+            //GetValue()
+
+            //💡 Testa med både int, string och double.
+
             GenericBox<string> boxwithstrings = new GenericBox<string>();
             GenericBox<int> boxwithints = new GenericBox<int>();
             GenericBox<double> boxwithdoubles = new GenericBox<double>();
@@ -16,11 +27,13 @@
             boxwithints.SetValue(2);
             boxwithints.SetValue(3);
 
-            boxwithdoubles.SetValue(1.0f);
-            boxwithdoubles.SetValue(2.0f);
-            boxwithdoubles.SetValue(3.0f);
+            boxwithdoubles.SetValue(1.2f);
+            boxwithdoubles.SetValue(2.4f);
+            boxwithdoubles.SetValue(3.6f);
 
-            boxwithdoubles.GetValue();
+            Console.WriteLine(boxwithdoubles.GetValue());
+            Console.WriteLine(boxwithstrings.GetValue());
+            Console.WriteLine(boxwithints.GetValue());
         }
     }
 }
