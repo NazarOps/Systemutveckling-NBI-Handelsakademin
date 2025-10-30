@@ -8,8 +8,8 @@ namespace GenericDoubleExercise
 {
     public class GenericList
     {
-        
-            
+
+
 
         public List<T> Duplicate<T>(T item)
         {
@@ -19,5 +19,13 @@ namespace GenericDoubleExercise
             return DuplicatedList;
         }
 
+
+        public static void PrintItems<T>(List<T> items)
+        {
+            foreach (T item in items)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
